@@ -1,0 +1,31 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "0.0.0",
+  "description": "rps ===",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alfonsodev/rps.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/alfonsodev/rps/issues"
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "istanbul": "~0.3.2",
+    "selenium-webdriver": "~2.44.0",
+    "cucumber": "~0.4.4",
+    "selenium-launcher": "~1.1.10",
+    "should": "~4.3.0",
+    "mocha-istanbul": "~0.2.0",
+    "uglify-js": "~2.4.15"
+  },
+  "dependencies": {
+    "browserify": "~6.3.3"
+  }
+}

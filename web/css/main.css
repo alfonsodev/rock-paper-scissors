@@ -1,0 +1,31 @@
+body {
+	background-color: #000;
+	color: #FFF;
+}
+
+.button_weapon {
+	width: 33%;
+	height: 33%;
+	background-color: #000;
+	border:0;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.button_weapon:hover {
+	background-color: #000;
+	border: 1px solid #00ff00;
+
+}	
+.rock {
+	background-image: url('../assets/polygon-rock.png');
+
+}
+
+.paper{
+	background-image: url('../assets/polygon-paper.png');
+}
+
+.scissors {
+	background-image: url('../assets/polygon-scissor.png');
+}

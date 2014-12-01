@@ -18,6 +18,13 @@
 		</style>
 	</head>
 	<body>
+
+		<!-- main menu -->
+		<div id="main_menu">
+			<a href="#" onclick="router.goToState('selection_screen', '1p')" >Player vs Computer</a>
+			<a href="#" onclick="router.goToState('selection_screen', 'cpu')" >Demo</a>
+		</div>
+
 		<!-- selection screen -->
 		<div id="selection_screen">
 			<p>Select an element</p>
@@ -57,7 +64,7 @@
 		var view = new View(document);
 		document.addEventListener('DOMContentLoaded', function() {
 			app([player1, player2], Game, router, view, config);
-			router.goToState('selection');
+			router.goToState('main_menu');
 		});
 	</script>
 </html>

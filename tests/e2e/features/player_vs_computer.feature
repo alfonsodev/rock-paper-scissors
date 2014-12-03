@@ -7,7 +7,7 @@ Feature: Plaver vs Computer
     Given I go to the "selection" page
     When computer chooses "<computer_choice>"
     And I choose "<human_choice>"
-    Then I should be redirected "show" page
+    Then I should be redirected to the "show" page
     And see "<human_choice>" picture and "<computer_choice>" picture
     And I wait "1" seconds
     Then I see "<result>" as result <human_choice> vs <computer_choice>

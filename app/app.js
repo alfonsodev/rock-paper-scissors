@@ -4,6 +4,10 @@ var app = function(players, game, router, view, config) {
 	var player1 = players[0];
 	var player2 = players[1];
 
+	router.state('main_menu', function() {
+		view.render('main_menu');
+	});
+
 	router.state('selection', function() {
 		player2.makeRandomSelection(game.elements);
 		view.render('selection_screen');

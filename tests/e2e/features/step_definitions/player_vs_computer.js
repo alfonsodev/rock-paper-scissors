@@ -94,11 +94,10 @@ module.exports = function() {
 this.Given(/^I wait "([^"]*)" seconds$/, function (seconds, callback) {
   setTimeout(function() {
       callback();
-  }, 1000);
+  }, seconds * 1000);
 });
 
 this.Then(/^I see "([^"]*)" as result (.*) vs (.*)$/, function (result,a,b, callback) {
-  // Write code here that turns the phrase above into concrete actions
   this.driver.findElement(this.getById('game_result')).then(function(elem) {
     elem.getText().then(function(text) {
       if (text == result) {
@@ -142,12 +141,7 @@ this.Then(/^I see "([^"]*)" as result (.*) vs (.*)$/, function (result,a,b, call
       });
   });
 
-  this.When(/^the count down ends$/, function(callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback();
-  });
-
-  this.Then(/^I should be redirected "([^"]*)" page$/, function(arg1, callback) {
+  this.Then(/^I should be redirected to the "([^"]*)" page$/, function(arg1, callback) {
     // Write code here that turns the phrase above into concrete actions
     callback();
   });

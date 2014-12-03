@@ -32,3 +32,4 @@ lcov-report/
 lcov.info
 todo
 web/js/build/app.js
+coveralls.yml

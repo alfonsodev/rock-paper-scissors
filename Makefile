@@ -4,7 +4,7 @@ ISTANBUL=./node_modules/.bin/istanbul
 COVERALLS=./node_modules/coveralls/bin/coveralls.js
 
 e2e:
-	DEBUG=features,error ./node_modules/.bin/cucumber.js ./tests/e2e/features/player_vs_computer.feature --require ./tests/e2e/features/step_definitions/player_vs_computer.js
+	./node_modules/.bin/cucumber.js ./tests/e2e/features/player_vs_computer.feature --require ./tests/e2e/features/step_definitions/player_vs_computer.js
 
 test:
 	$(MOCHA) -R spec $(TESTS_FILES)

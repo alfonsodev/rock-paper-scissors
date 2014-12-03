@@ -1,5 +1,4 @@
 var webdriver = require("selenium-webdriver"),
-//    seleniumLauncher = require('selenium-launcher'),
     until = require('selenium-webdriver').until;
 
 var selenium;

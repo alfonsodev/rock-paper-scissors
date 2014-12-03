@@ -4,7 +4,7 @@
   "description": "rps ===",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make instrument && make coverage && make test-coveralls"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
     "selenium-launcher": "~1.1.10",
     "should": "~4.3.0",
     "mocha-istanbul": "~0.2.0",
-    "uglify-js": "~2.4.15"
+    "uglify-js": "~2.4.15",
+    "debug": "~2.1.0",
+    "coveralls": "~2.11.2"
   },
   "dependencies": {
     "browserify": "~6.3.3"

@@ -37,7 +37,7 @@ View.prototype.updateSelectionTitle = function(selection) {
 	this.document.querySelectorAll('#selection_name')[0].innerHTML = selection;
 };
 
-View.prototype.registerUIEventes = function(Game) {
+View.prototype.registerUIEventes = function(Game, player1, router) {
     var self = this;
     this.document.querySelectorAll('#selection_screen')[0].addEventListener('click', function(event) {
         var item;

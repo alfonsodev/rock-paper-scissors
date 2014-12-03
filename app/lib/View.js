@@ -41,7 +41,6 @@ View.prototype.registerUIEventes = function(Game) {
     var self = this;
     this.document.querySelectorAll('#selection_screen')[0].addEventListener('click', function(event) {
         var item;
-        debugger;
         event.stopPropagation();
         if (event.target.nodeName === 'IMG') {
             item = event.target.alt;

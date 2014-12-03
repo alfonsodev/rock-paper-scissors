@@ -3,6 +3,8 @@
 var should = require('should');
 var assert = require('assert');
 var View = require('../../..').View;
+var Player = require('../../..').Player;
+var Game = require('../../..').Game;
 
 describe('View class', function() {
 	it('render method ', function() {
@@ -45,6 +47,75 @@ describe('View class', function() {
 		view.renderClass(someClasses);
 		assert.equal(elements['#element1'][0].class, 'item class1');
 		assert.equal(elements['#element2'][0].class, 'item class2');
+	});
+
+	it('register events for images ', function() {
+		var registeredEvents = [];
+		var player1 = new Player();
+		var router = {};
+		var view;
+		var router = { gotToState: function() { }};
+		var document = {
+			querySelectorAll: function(elementId) {
+				return [
+					{
+						addEventListener: function (eventName, callback) {
+							console.log(elementId, eventName);
+							registeredEvents[eventName] = elementId;
+							callback({
+								target: { alt:'IMG' },
+								stopPropagation: function() { },
+							});
+						}
+					}
+				];
+			}
+		};
+
+		view = new View(document);
+		view.registerUIEventes(Game, player1, router);	
+
+		registeredEvents.should.have.property('click');
+		registeredEvents.should.have.property('mouseover');
+
+		registeredEvents['click'].should.be.equal('#selection_screen');
+		registeredEvents['mouseover'].should.be.equal('#selection_screen');
 
 	});
+
+	it('register events for images ', function() {
+		var registeredEvents = [];
+		var player1 = new Player();
+		var router = {};
+		var view;
+		var router = { gotToState: function() { }};
+		var document = {
+			querySelectorAll: function(elementId) {
+				return [
+					{
+						addEventListener: function (eventName, callback) {
+							console.log(elementId, eventName);
+							registeredEvents[eventName] = elementId;
+							callback({
+								target: { alt:'DIV' },
+								stopPropagation: function() { },
+							});
+						}
+					}
+				];
+			}
+		};
+
+		view = new View(document);
+		view.registerUIEventes(Game, player1, router);	
+
+		registeredEvents.should.have.property('click');
+		registeredEvents.should.have.property('mouseover');
+
+		registeredEvents['click'].should.be.equal('#selection_screen');
+		registeredEvents['mouseover'].should.be.equal('#selection_screen');
+
+	});
+
+
 });

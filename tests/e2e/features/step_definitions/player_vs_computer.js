@@ -43,12 +43,13 @@ module.exports = function() {
 
   this.When(/^I choose "([^"]*)"$/, function(name, callback) {
     // Write code here that turns the phrase above into concrete actions
-    var elementName = "button_" + normalize(name);
+    var elementName = normalize(name);
     this.driver
       .findElement(this.getById(elementName)).click().then(function() {
         debug('P1 click: ' + elementName);
         callback();
       }, function(e) {
+        debugger;
         callback("ERROR: Cant click in the element " + elementName);
       });
   });

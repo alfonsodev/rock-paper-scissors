@@ -3,36 +3,42 @@
 	<head>
 		<meta charset="UTF-8">
 	    <title>Title</title>
-		<style>
-			#selection_screen {
-
-			}
-
-			#show_screen {
-				display: none;
-			}
-
-			#result_screen {
-				display: none;
-			}
-		</style>
+	    <link rel="stylesheet" type="text/css" href="css/main.css">
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	</head>
 	<body>
 		<!-- selection screen -->
-		<div id="selection_screen">
-			<p>Select an element</p>
-			<button class="button_weapon rock" id="button_rock" onclick="player1.setSelection('rock');router.goToState('show');" onmouseover="view.updateSelectionTitle('ROCK')"></button>
-			<button class="button_weapon paper" id="button_paper" onclick="player1.setSelection('paper'); router.goToState('show');"	onmouseover="view.updateSelectionTitle('PAPER')"></button>
-			<button class="button_weapon scissors" id="button_scissors" onclick="player1.setSelection('scissors'); router.goToState('show')" onmouseover="view.updateSelectionTitle('SCISSORS')"></button>
-			<p id="selection_name"></p>
+		<div id="selection_screen" class="container">
+			<div class="row">
+				<div class="col-lg-6 ">
+					<h2 id="selection_name"></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-md-offset-1">
+					<div id="rock" >
+						<img src="assets/polygon-rock-lg.png" alt="rock">
+					</div>
+				</div>
+				<div class="col-lg-3">
+					 <div id="scissors">
+		                <img src="assets/polygon-scissor-lg.png" alt="scissor">
+				    </div>
+				</div>
+				<div class="col-lg-3">
+				    <div id="paper">
+	                    <img src="assets/polygon-paper-lg.png" alt="paper">
+				    </div>
+				</div>
+			</div>
 		</div>
 
 		<!-- show screen -->
 		<div id="show_screen"> 
 			<p id="player1_name"></p>
-			1:<div class="button_weapon "	id="player1_selection"></div>
+			1:<div class="item " id="player1_selection"></div>
 			<p id="player2_name"></p>
-			2:<div class="button_weapon "	id="player2_selection"></div>
+			2:<div class="item " id="player2_selection"></div>
 		</div>
 
 		<!-- result screen -->
@@ -55,9 +61,12 @@
 		var player2 = new Player('COMPUTER');
 		var router = new Router(document, window);
 		var view = new View(document);
+
 		document.addEventListener('DOMContentLoaded', function() {
 			app([player1, player2], Game, router, view, config);
 			router.goToState('selection');
+			view.registerUIEventes(Game);
 		});
+
 	</script>
 </html>

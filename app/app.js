@@ -10,6 +10,7 @@ var app = function(players, game, router, view, config) {
 	});
 
 	router.state('show', function() {
+		debugger;
 		var whoWins = game.getResult(player1.getSelection(), player2.getSelection());
 		view.render('show_screen', {
 			'player1_selection': player1.getSelection(),

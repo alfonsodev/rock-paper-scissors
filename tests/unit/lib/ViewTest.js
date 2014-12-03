@@ -43,8 +43,8 @@ describe('View class', function() {
 		};
 
 		view.renderClass(someClasses);
-		assert.equal(elements['#element1'][0].class, 'button_weapon class1');
-		assert.equal(elements['#element2'][0].class, 'button_weapon class2');
+		assert.equal(elements['#element1'][0].class, 'item class1');
+		assert.equal(elements['#element2'][0].class, 'item class2');
 
 	});
 });

@@ -13,8 +13,8 @@ Feature: Plaver vs Computer
     Then I see "<result>" as result <human_choice> vs <computer_choice>
     Examples:
       | human_choice | computer_choice | result  |  
-      | rock         | rock            | DRAW    |
       | paper        | rock            | YOU WIN |
+      | rock         | rock            | DRAW    |
       | scissors     | rock            | YOU LOSE |   
     Examples:
       | human_choice | computer_choice | result   |  
@@ -26,4 +26,4 @@ Feature: Plaver vs Computer
       | rock         | scissors        | YOU WIN  |
       | paper        | scissors        | YOU LOSE |
       | scissors     | scissors        | DRAW     |   
-
+ 

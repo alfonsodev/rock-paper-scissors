@@ -32,6 +32,7 @@ module.exports = function() {
 
   this.Given(/^I go to the "([^"]*)" page$/, function(page, callback) {
     this.driver.get(self.baseUrl + '/#' + normalize(page) + '.html');
+    this.driver.findElement(this.getById('player1_mode')).click();
     this.driver.getTitle().then(function(title) {
       if (title != pageTitles[normalize(page)]) {
         callback('Title at ' + page + ' should be ' +  pageTitles[normalize(page)]        + ' but "' + title +'" found instead');
@@ -49,7 +50,6 @@ module.exports = function() {
         debug('P1 click: ' + elementName);
         callback();
       }, function(e) {
-        debugger;
         callback("ERROR: Cant click in the element " + elementName);
       });
   });
@@ -140,6 +140,11 @@ this.Then(/^I see "([^"]*)" as result (.*) vs (.*)$/, function (result,a,b, call
         callback('ERROR: one fo this elements is not found ' + JSON.stringify(map));
       });
   });
+
+this.Then(/^I should be redirected "([^"]*)" page$/, function (arg1, callback) {
+  // Write code here that turns the phrase above into concrete actions
+  callback();
+});
 
   this.Then(/^I should be redirected to the "([^"]*)" page$/, function(arg1, callback) {
     // Write code here that turns the phrase above into concrete actions

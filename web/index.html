@@ -9,32 +9,33 @@
 	<body>
 
 		<!-- main menu -->
-		<div id="menu">
-			<a href="#" onclick="router.goToState('selection_screen', '1p')" >Player vs Computer</a>
-			<a href="#" onclick="router.goToState('selection_screen', 'cpu')" >Demo</a>
+		<div id="menu_screen">
+			<ul>
+				<li><a id="player1_mode" href="#" onclick="router.goToState('selection')" >Player vs Computer</a></li>
+			</ul>
 		</div>
 
 		<!-- selection screen -->
 		<div id="selection_screen" class="container">
 			<div class="row">
-				<div class="col-lg-6 ">
+				<div class="col-lg-6 col-md-3 col-xs-3">
 					<h2 id="selection_name"></h2>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3 col-md-offset-1">
-					<div id="rock" >
-						<img src="assets/polygon-rock-lg.png" alt="rock">
+				<div class="col-lg-3 col-md-3 col-xs-3">
+					<div id="rock">
+	 				     <img src="assets/polygon-rock-lg.png" alt="rock">
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-md-3 col-xs-3">
 					 <div id="scissors">
-		                <img src="assets/polygon-scissor-lg.png" alt="scissor">
+	 		            <img src="assets/polygon-scissor-lg.png" alt="scissors">
 				    </div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-md-3 col-xs-3">
 				    <div id="paper">
-	                    <img src="assets/polygon-paper-lg.png" alt="paper">
+	 	                <img src="assets/polygon-paper-lg.png" alt="paper">
 				    </div>
 				</div>
 			</div>
@@ -71,7 +72,7 @@
 
 		document.addEventListener('DOMContentLoaded', function() {
 			app([player1, player2], Game, router, view, config);
-			router.goToState('selection');
+			router.goToState('menu');
 			view.registerUIEventes(Game);
 		});
 

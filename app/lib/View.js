@@ -5,6 +5,7 @@ var View = function(doc) {
 };
 
 View.prototype.render = function(key, variables) {
+    this.document.querySelectorAll('#menu_screen')[0].style.display = 'none';
 	this.document.querySelectorAll('#selection_screen')[0].style.display = 'none';
 	this.document.querySelectorAll('#show_screen')[0].style.display = 'none';
  	this.document.querySelectorAll('#result_screen')[0].style.display = 'none';
@@ -22,7 +23,12 @@ View.prototype.render = function(key, variables) {
 View.prototype.renderClass = function(classes) {
     for (var k in classes) {
         if (classes.hasOwnProperty(k)) {
-	       this.document.querySelectorAll('#' + k)[0].setAttribute('class', 'item ' + classes[k]);
+            if (this.document.querySelectorAll('#' + k)) {   
+        
+    	       this.document.querySelectorAll('#' + k)[0].setAttribute('class', 'item ' + classes[k]);
+             }else{
+        
+             }
         }
     }
 };

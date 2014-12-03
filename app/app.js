@@ -4,8 +4,8 @@ var app = function(players, game, router, view, config) {
 	var player1 = players[0];
 	var player2 = players[1];
 
-	router.state('main_menu', function() {
-		view.render('main_menu');
+	router.state('menu', function() {
+		view.render('menu_screen');
 	});
 
 	router.state('selection', function() {

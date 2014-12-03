@@ -73,7 +73,7 @@
 		document.addEventListener('DOMContentLoaded', function() {
 			app([player1, player2], Game, router, view, config);
 			router.goToState('menu');
-			view.registerUIEventes(Game);
+			view.registerUIEventes(Game, player1, router);
 		});
 
 	</script>

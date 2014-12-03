@@ -1,5 +1,10 @@
 rock paper scissors game  
-===
+===  
+
+![](https://api.travis-ci.org/alfonsodev/rock-paper-scissors.svg)
+[![Coverage Status](https://coveralls.io/repos/alfonsodev/rock-paper-scissors/badge.png?branch=master)](https://coveralls.io/r/alfonsodev/rock-paper-scissors?branch=master)    
+
+
 ## Build and launch:  
      npm install  
      make bro  

@@ -1,5 +1,10 @@
+body {
+  text-align:center
+}
 .main_title {
   background-color: #2075fc;
+  text-align: left;
+  padding-left: 45px;
 }
 
 .main_title h1 {

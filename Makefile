@@ -10,7 +10,8 @@ test:
 	$(MOCHA) -R spec $(TESTS_FILES)
 
 bro:
-	./node_modules/.bin/browserify -im -r ./app:app | ./node_modules/.bin/uglifyjs > web/js/build.js
+	./node_modules/.bin/browserify -im -r ./app:app > web/js/build.js
+	#| ./node_modules/.bin/uglifyjs > web/js/build.js
 up:
 	cd web; python -m SimpleHTTPServer 8181
 instrument:

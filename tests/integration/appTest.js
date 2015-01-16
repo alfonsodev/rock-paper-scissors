@@ -67,8 +67,6 @@ describe('App function', function() {
 		p2.setSelection('paper');
 		router.goToState('show');
 
-		elements.should.have.property('#result_screen');
-
 		setTimeout(function() {
 			done();
 		}, config.timeout + 200);
@@ -86,8 +84,6 @@ describe('App function', function() {
 		p1.setSelection('rock');
 		p2.setSelection('paper');
 		router.goToState('show');
-
-		elements.should.have.property('#result_screen');
 
 		setTimeout(function() {
 			done();

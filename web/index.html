@@ -3,57 +3,99 @@
 	<head>
 		<meta charset="UTF-8">
 	    <title>Title</title>
-	    <link rel="stylesheet" type="text/css" href="css/main.css">
 	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
+    <div class="row" >
+      <div class="col-lg-12 col-md-12 col-xs-12 main_title" >
+          <h1>Rock, Paper, Scissor</h1>
+      </div>
+    </div>
 
-		<!-- main menu -->
-		<div id="menu_screen">
-			<ul>
-				<li><a id="player1_mode" href="#" onclick="router.goToState('selection')" >Player vs Computer</a></li>
-			</ul>
-		</div>
+     <!-- main menu -->
+     <div id="menu_screen" class="row">
+       <div class="col-lg-12 col-md-12 col-xs-12" >
+         <h4>Click to begin</h4>
+         <ul>
+           <li><a id="player1_mode" href="#" onclick="router.goToState('selection')" >Player vs Computer</a></li>
+         </ul>
+       </div>
+     </div>
 
-		<!-- selection screen -->
+    <!-- selection screen -->
 		<div id="selection_screen" class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-3 col-xs-3">
-					<h2 id="selection_name"></h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-md-3 col-xs-3">
-					<div id="rock">
-	 				     <img src="assets/polygon-rock-lg.png" alt="rock">
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-xs-3">
-					 <div id="scissors">
-	 		            <img src="assets/polygon-scissor-lg.png" alt="scissors">
-				    </div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-xs-3">
-				    <div id="paper">
-	 	                <img src="assets/polygon-paper-lg.png" alt="paper">
-				    </div>
-				</div>
-			</div>
+        <h1 id="game_result">game result</h1>
+        <div class="row" >
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-xs-6">
+            <!-- Player picture -->
+             <div class="row">
+                 <div class="col-lg-4 col-md-4 col-xs-4">
+                </div>
+                 <div class="col-lg-4 col-md-4 col-xs-4">
+                    <p>Player 1</p>
+                 </div>
+                 <div class="col-lg-4 col-md-4 col-xs-4">
+                </div>
+             </div>
+            <!-- Selection sentence -->
+             <div class="row">
+                 <div class="col-lg-1 col-md-1 col-xs-1">
+                </div>
+                 <div class="col-lg-7 col-md-7 col-xs-7">
+                    <p>Choose Your weapon to strart playing</p>
+                    <center> <p id="selection_name"></p></center>
+                    <center> <p id="player1_selection"></p></center>
+
+                 </div>
+                 <div class="col-lg-1 col-md-2 col-xs-2">
+                </div>
+             </div>
+             <div class="row">
+                 <div id="rock" class="col-lg-4 col-md-4 col-xs-4">
+                   <img src="assets/Player1Rock.png" alt="rock">
+                 </div>
+                 <div id-"scissors" class="col-lg-4 col-md-4 col-xs-4">
+                   <img src="assets/Player1Scissors.png" alt="scissors">
+                 </div>
+                 <div id="paper" class="col-lg-4 col-md-4 col-xs-4">
+                   <img src="assets/Player1Paper.png" alt="paper">
+                 </div>
+             </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-xs-6">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-4">
+                  &nbsp;
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-4">
+                  <img src="assets/ComputerPlayer.png" alt="computer">
+                  <center> <p id="player2_selection"></p></center>
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-4">
+                  &nbsp;
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-4">
+                    <img src="assets/Player2Rock.png" alt="rock">
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-4">
+                    <img src="assets/Player2Scissors.png" alt="scissors">
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-4">
+                    <img src="assets/Player2Paper.png" alt="paper">
+                </div>
+             </div>
+          </div>
+        </div>
+
+      </div>
 		</div>
 
-		<!-- show screen -->
-		<div id="show_screen"> 
-			<p id="player1_name"></p>
-			1:<div class="item " id="player1_selection"></div>
-			<p id="player2_name"></p>
-			2:<div class="item " id="player2_selection"></div>
-		</div>
-
-		<!-- result screen -->
-		<div id="result_screen">
-			<h2 id="game_result"></h2>
-			<a href="/" >back</a>
-		</div>
 	</body>
 	<!-- -->
 	<script type="text/javascript" src="js/build.js"></script>

@@ -22,10 +22,7 @@ describe('View class', function() {
 
 		view.render('foo', { 'name': 'Jhon', 'surname': ''});
 		assert.equal(elements['#selection_screen'][0].style.display, 'none');
-		assert.equal(elements['#show_screen'][0].style.display, 'none');
-		assert.equal(elements['#result_screen'][0].style.display, 'none');
-		assert.equal(elements['#foo'][0].style.display, 'block');
-		assert.equal(elements['#name'][0].innerHTML, 'Jhon');
+    assert.equal(elements['#name'][0].innerHTML, 'Jhon');
 	});
 
 	it('render class', function() {
@@ -73,7 +70,7 @@ describe('View class', function() {
 		};
 
 		view = new View(document);
-		view.registerUIEventes(Game, player1, router);	
+		view.registerUIEventes(Game, player1, router);
 
 		registeredEvents.should.have.property('click');
 		registeredEvents.should.have.property('mouseover');
@@ -107,7 +104,7 @@ describe('View class', function() {
 		};
 
 		view = new View(document);
-		view.registerUIEventes(Game, player1, router);	
+		view.registerUIEventes(Game, player1, router);
 
 		registeredEvents.should.have.property('click');
 		registeredEvents.should.have.property('mouseover');

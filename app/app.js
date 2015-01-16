@@ -9,14 +9,14 @@ var app = function(players, game, router, view, config) {
 	});
 
 	router.state('selection', function() {
+    debugger;
 		player2.makeRandomSelection(game.elements);
 		view.render('selection_screen');
 	});
 
 	router.state('show', function() {
-		debugger;
 		var whoWins = game.getResult(player1.getSelection(), player2.getSelection());
-		view.render('show_screen', {
+		view.render('selection_screen', {
 			'player1_selection': player1.getSelection(),
 			'player2_selection': player2.getSelection()
 		});
@@ -24,13 +24,14 @@ var app = function(players, game, router, view, config) {
 			'player1_selection': player1.getSelection(),
 			'player2_selection': player2.getSelection()
 		});
-		setTimeout(function() {
-			router.goToState('result', {result: whoWins});
-		}, config.timeout);
+    console.log(whoWins);
+		router.goToState('result', {result: whoWins});
 	});
 
 	router.state('result', function() {
-	 	view.render('result_screen', { 'game_result': game.getResult(player1.getSelection(), player2.getSelection()) });
+	 	view.render('selection_screen', {
+      'game_result': game.getResult(player1.getSelection(), player2.getSelection())
+    });
 	});
 };
 

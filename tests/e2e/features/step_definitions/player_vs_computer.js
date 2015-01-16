@@ -60,7 +60,7 @@ module.exports = function() {
     this.driver.executeScript(mockChoice).then(function(){
       callback();
     });
-    
+
   });
 
   this.Given(/^see "([^"]*)" picture and "([^"]*)" picture$/, function (humanChoice, computerChoice, callback) {
@@ -132,7 +132,7 @@ this.Then(/^I see "([^"]*)" as result (.*) vs (.*)$/, function (result,a,b, call
     this.driver
       .findElement(this.getById(map[target])).getText().then(function(text) {
         if(text === playerName) {
-          callback(); 
+          callback();
         } else {
           callback('ERROR: Player one name should be YOU');
         }

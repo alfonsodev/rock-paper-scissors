@@ -3,8 +3,14 @@
 var Player = function(name) {
 	var _name = name || 'YOU';
 	var _selection = '';
+  var _avatar = '';
 };
-
+Player.prototype.setAvatar = function(avatar) {
+  this._avatar = avatar;
+};
+Player.prototype.getAvatar = function() {
+  return this._avatar;
+};
 Player.prototype.getSelection = function() {
 	return this._selection;
 };

@@ -5,3 +5,12 @@
 .main_title h1 {
   color:white;
 }
+
+#avatars {
+ border-right: 1px solid gray ;
+}
+
+.selected {
+  background-color: gray;
+
+}

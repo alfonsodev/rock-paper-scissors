@@ -9,9 +9,10 @@ var app = function(players, game, router, view, config) {
 	});
 
 	router.state('selection', function() {
-    debugger;
 		player2.makeRandomSelection(game.elements);
-		view.render('selection_screen');
+		view.render('selection_screen', {
+      'player1_avatar': '<img src="' + player1.getAvatar() + '" >'
+    });
 	});
 
 	router.state('show', function() {

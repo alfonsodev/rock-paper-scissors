@@ -10,9 +10,10 @@ var app = function(players, game, router, view, config) {
 	});
 
 	router.state('selection', function() {
-    debugger;
 		player2.makeRandomSelection(game.elements);
-		view.render('selection_screen');
+		view.render('selection_screen', {
+      'player1_avatar': '<img src="' + player1.getAvatar() + '" >'
+    });
 	});
 
 	router.state('show', function() {
@@ -60,8 +61,14 @@ module.exports = Game;
 var Player = function(name) {
 	var _name = name || 'YOU';
 	var _selection = '';
+  var _avatar = '';
 };
-
+Player.prototype.setAvatar = function(avatar) {
+  this._avatar = avatar;
+};
+Player.prototype.getAvatar = function() {
+  return this._avatar;
+};
 Player.prototype.getSelection = function() {
 	return this._selection;
 };
@@ -174,6 +181,31 @@ View.prototype.registerUIEventes = function(Game, player1, router) {
             self.document.querySelectorAll('#selection_name')[0].innerHTML = selection.toUpperCase();
         }
     });
+
+    var clearAllSelections = function() {
+      [].forEach.call(document.querySelectorAll('.img-avatar'), function (el) {
+        el.setAttribute('class', 'img-avatar');
+      });
+    };
+
+    //Avatar events
+    [].forEach.call(document.querySelectorAll('.img-avatar'), function (el) {
+      el.addEventListener('click', function() {
+        clearAllSelections();
+        if(el.getAttribute('class') == 'img-avatar selected') {
+          el.setAttribute('class', 'img-avatar');
+          player1.setAvatar('');
+        } else {
+          el.setAttribute('class', 'img-avatar selected');
+          player1.setAvatar(el.getAttribute('src'));
+        }
+      }, false);
+});
+
+
+
+
+
 };
 module.exports = View;
 

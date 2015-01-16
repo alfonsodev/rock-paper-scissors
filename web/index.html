@@ -12,10 +12,34 @@
           <h1>Rock, Paper, Scissor</h1>
       </div>
     </div>
-
+<br> <br> <br> <br>
      <!-- main menu -->
      <div id="menu_screen" class="row">
-       <div class="col-lg-12 col-md-12 col-xs-12" >
+
+        <div class="col-lg-6 col-md-6 col-xs-6" id="avatars">
+          <div class="row" >
+             <div class="col-lg-1 col-md-1 col-xs-1"> </div>
+             <div class="col-lg-7 col-md-7 col-xs-7">
+               <p>Choose Your weapon to strart playing</p>
+               <center> <p id="selection_name"></p></center>
+                <center> <p id="player1_selection"></p></center>
+             </div>
+             <div class="col-lg-1 col-md-1 col-xs-1"></div>
+          </div>
+          <!-- AVATARS -->
+          <div class="row" >
+              <div class="col-lg-4 col-md-4 col-xs-4">
+                <img src="assets/BoyPlayer.png" alt="boy" id="boy" class="img-avatar selected">
+              </div>
+              <div class="col-lg-4 col-md-4 col-xs-4">
+                <img src="assets/Girl1.png" alt="girl1" id="girl1" class="img-avatar">
+              </div>
+              <div class="col-lg-4 col-md-4 col-xs-4">
+                <img src="assets/Girl2.png" alt="girl2" id="girl2" class="img-avatar">
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6" >
          <h4>Click to begin</h4>
          <ul>
            <li><a id="player1_mode" href="#" onclick="router.goToState('selection')" >Player vs Computer</a></li>
@@ -35,7 +59,7 @@
                  <div class="col-lg-4 col-md-4 col-xs-4">
                 </div>
                  <div class="col-lg-4 col-md-4 col-xs-4">
-                    <p>Player 1</p>
+                    <div id="player1_avatar"></div>
                  </div>
                  <div class="col-lg-4 col-md-4 col-xs-4">
                 </div>
